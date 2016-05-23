@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	{%load staticfiles%}
-	<link rel="stylesheet" type="text/css" href="{%static 'bsh/stylesheets/styles.css'%}">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-	<div id='master-wrapper'>
-		 <div id='background-img'></div>
-		 <div id='comingsoon'>
-		 	<h1 class='temp'>Black Spruce Herbals</h1>
-		 	<h3 class='temp'>Coming Soon!</h3>
-		 </div>
-	</div>
-</body>
+	<head>
+		<title>Black Spruce Herbals | Flower Essence Practitioner</title>
+		{%load staticfiles%}
+		<link rel="stylesheet" type="text/css" href="{%static 'bsh/stylesheets/reset.css'%}">
+		<link rel="stylesheet" type="text/css" href="{%static 'bsh/stylesheets/styles.css'%}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="{% static 'bsh/js/jquery.js' %}"></script>
+		<script src="{% static 'bsh/js/js481.js' %}"></script>
+	</head>
+	<body>
+		<div id='master-wrapper'>
+	 	    <div id='background-img'></div>
+			<header>
+				<nav class="mob-nav">
+					<div class="mob-menu-container">
+						<div id='big-opaq-background'></div>
+						<a href='/' class='mob-nav-links'>Home</a>
+						<p class='mob-nav-links' id="mob-about-link">About +</p>
+						<div class="about-dd-container">
+							<div id='mob-background-opaq'></div>
+							<a href='about' class='mob-nav-links'>My Journey</a>
+							<a href='essence' class='mob-nav-links'>Flower Essences: what are they?</a>
+							<a href='your-session' class='mob-nav-links'>Your Session</a>
+						</div>
+						<a href='shop' class='mob-nav-links'>Shop</a>
+						<a href='contact' class='mob-nav-links'>Contact</a>
+					</div>
+					<h2 class="menu-btn">MENU</h2>				
+				</nav>
+				<h1>Black Spruce Herbals</h1>
+			</header>
+			<nav class="desktop-nav">
+				<div class="desktop-menu-container">
+					<a href='/' class='desktop-nav-links'>Home</a>
+					<a href='about' class='desktop-nav-links'>About</a>
+					<a href='shop' class='desktop-nav-links'>Shop</a>
+					<a href='contact' class='desktop-nav-links'>Contact</a>
+				</div>
+			</nav>
+			<section>
+				{% block section %}
+				{% endblock %}
+			</section>
+			<footer>
+				<h6 class='copyright'>Emma Day © 2016</h6>
+				<div class='footer-icon-container'>
+					<a href='https://www.facebook.com/100009100305685'>
+					    <img class='footer-icon' src="{% static 'bsh/images/facebook-icon.png' %}">
+					</a>
+					<a href="mailto:emma@blackspruceherbals.com">
+						<img class='footer-icon' src="{% static 'bsh/images/email-icon.png' %}">					
+					</a>
+				</div>
+			</footer>
+		</div>
+	</body>
 </html>
