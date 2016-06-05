@@ -128,7 +128,7 @@
   }
 
   .quotations{
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
   .essence-container{
@@ -164,12 +164,12 @@
     text-indent: 25px;
     font-family: 'Aleo';
     padding: 1em 1.5em;
-    font-style: italic;
+    /*font-style: italic;*/
   }
 
   .essence-quote{
     font-style: italic;
-    text-align: center;
+    /*text-align: center;*/
     text-indent: 0px;
   }
 
@@ -391,6 +391,62 @@
   }
 }
 
+@media screen and (min-width: 481px){
+  .menu-btn{
+    font-size: 1.5em;
+  }
+
+  .mob-nav-links{
+    font-size: 1.2em;
+    padding: .75em 0;
+  }
+
+  h1{
+    font-size: 2.4em;
+  }
+
+  #home-quote-div{
+    width: 23em;
+    margin: 0 auto;
+  }
+
+  .home-quote{
+    font-size: 1.35em;
+    top: 15px;
+  }
+
+  section{
+    width: 80%;
+    height: 16em;
+  }
+
+  .background-opaq{
+    width: 23em;
+    height: 15em;
+  }
+
+  .essence-background-opaq{
+    width: 100%;
+  }
+
+  .copyright{
+    font-size: 1.5em;
+  }
+
+  footer{
+    height: 7em;
+  }
+
+  .footer-icon-container{
+    width: 9em;
+  }
+
+  .footer-icon{
+    width:70px;
+    height: 70px;
+  }
+}
+
 @media screen and (min-width: 1024px){
   html{
     background: url(../images/lily.jpg) no-repeat center center fixed;
@@ -408,8 +464,13 @@
     font-size: 4em;
   }
 
+  .mob-menu-container, .mob-nav{
+    visibility: hidden;
+    height: 0em;
+  }
+
   .desktop-menu-container{
-    width:33.3em;
+    width:33.6em;
     margin: 0 auto;
   }
 
@@ -425,21 +486,79 @@
     opacity: .3;
   }
 
-  section, #home-quote-div, .background-opaq{
-    width: 30em;
-    height: 20em;
-    margin: 4em auto;
+  .about-drop-down-container{
+    width: 25em;
+    position: absolute;
+    left: 52%;
+    transform: translateX(-38%);
+    padding-top: 1em;
+    z-index: 2;
+    visibility: hidden;
+  }
+
+  .desktop-opaq-backround{
+    background-color: black;
+    width: 25em;
+    height: 11.5em;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .dd-links{
+    display: block;
+    font-size: 1.3em;
+    padding: 1em 1em;
+    color: white;
+    z-index: 2;
+  }
+
+  .background-opaq{
+    height: 17em;
+    width: 24.5em;
+  }
+
+  section{
+    width: 45em;
+    height: 29em;
+    overflow-y: auto;
   }
 
   #home-quote-div{
-    width: 30em;
-    height: 20em;
+    width: 24.5em;
+    height: 17em;
+    margin: 4em auto;
   }
 
   .home-quote{
     width: 15em;
-    font-size: 1.85em;
-    top: 76px;
+    font-size: 1.5em;
+    top: 17px;
+  }
+
+  .essence-container, .essence-background-opaq{
+    top: 0;
+    width: 100%;
+  }
+
+  #contact-form{
+    margin: 40px auto 0 auto;
+    height: 23em;
+  }
+
+  form{
+    height: 20em;
+  }
+
+  #contact-form input{
+    margin-bottom: 8px;
+  }
+
+  #contact-form textarea{
+    height: 120px;
+  }
+
+  #contact-form #submit-button{
+    margin-right: 20px;
   }
 
   footer{
