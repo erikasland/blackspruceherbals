@@ -14,14 +14,14 @@ $(document).ready(function(){
 		aboutDDContainer.css("height", "0em");
 		opaqBackground.css("opacity", "0.0");
 		bigOpaqBackground.css("opacity", "0.0");
-		footer.css({position: "absolute", bottom: "0"});
 
+	if(screenWidth < 1024){
 		// Sets footer's position for differnt pages
 		var footerPosition = function(clientHeight, offsetTop){
 			footer.css("bottom", "-" + (clientHeight - offsetTop + (offsetTop / 2)) + "px")
 		}
-
-	if(screenWidth < 1024){
+		
+		footer.css({position: "absolute", bottom: "0"});
 		// Checks what page you are currently on and sets the footer accordingly
 		if(window.location.pathname == "/essence" || window.location.pathname == "/your-session" || window.location.pathname == "/about"){
 			footerPosition(essenceContainer[0].clientHeight, essenceContainer[0].offsetTop)
