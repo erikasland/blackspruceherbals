@@ -15,36 +15,40 @@ $(document).ready(function(){
 		opaqBackground.css("opacity", "0.0");
 		bigOpaqBackground.css("opacity", "0.0");
 
-	if(screenWidth < 1024){
-		// Sets footer's position for differnt pages
-		var footerPosition = function(clientHeight, offsetTop){
-			footer.css("bottom", "-" + (clientHeight - offsetTop + (offsetTop / 2)) + "px")
-		}
+	// if(screenWidth < 1024){
+	// 	// Sets footer's position for differnt pages
+	// 	var footerPosition = function(clientHeight, offsetTop){
+	// 		footer.css("bottom", "-" + (clientHeight - offsetTop + (offsetTop / 2)) + "px")
+	// 	}
 		
-		footer.css({position: "absolute", bottom: "0"});
-		// Checks what page you are currently on and sets the footer accordingly
-		if(window.location.pathname == "/essence" || window.location.pathname == "/your-session" || window.location.pathname == "/about"){
-			footerPosition(essenceContainer[0].clientHeight, essenceContainer[0].offsetTop)
-		}else if(window.location.pathname == "/contact"){
-			footerPosition(contactForm[0].clientHeight, contactForm[0].offsetTop)
-		}
-	}
+	// 	footer.css({position: "absolute", bottom: "0"});
+	// 	// Checks what page you are currently on and sets the footer accordingly
+	// 	if(window.location.pathname == "/essence" || window.location.pathname == "/your-session" || window.location.pathname == "/about"){
+	// 		footerPosition(essenceContainer[0].clientHeight, essenceContainer[0].offsetTop)
+	// 	}else if(window.location.pathname == "/contact"){
+	// 		footerPosition(contactForm[0].clientHeight, contactForm[0].offsetTop)
+	// 	}
+	// }
 
 		// Toggles mobile nav links visibility by setting container's height
 		$(".menu-btn").click(function(){  
 			if(mobMenuContain[0].offsetHeight === 0){
 				menuBtn.css("border-top", "2px solid white");
-				bigOpaqBackground.css("height", "12em")
-				mobMenuContain.animate({height: "12em"},500, function(){
-					bigOpaqBackground.animate({opacity: "0.7"}, 500);
+				if(screenWidth < 481){
+					bigOpaqBackground.css("height", "14.6em")
+				}else{
+					bigOpaqBackground.css("height", "16em")
+				}
+				mobMenuContain.animate({height: "12em"},400, function(){
+					bigOpaqBackground.animate({opacity: ".9"}, 400);
 				});
 
-				if(window.location.pathname == "/"){
-					footer.animate({bottom: "-12em"}, 500);
-				}
+				// if(window.location.pathname == "/"){
+				// 	footer.animate({bottom: "-12em"}, 400);
+				// }
 
 			}else{
-				mobMenuContain.animate({height: "0em"}, 500, function(){
+				mobMenuContain.animate({height: "0em"}, 400, function(){
 					menuBtn.css("border-top", "");
 					aboutDDContainer.css("height", "0em")
 
@@ -52,38 +56,48 @@ $(document).ready(function(){
 				bigOpaqBackground.animate({opacity: "0.0"}, 100);
 				opaqBackground.animate({opacity: "0.0"}, 100);
 
-				if(window.location.pathname == "/"){
-					footer.animate({bottom: "0em"}, 500);
-				}
+				// if(window.location.pathname == "/"){
+				// 	footer.animate({bottom: "0em"}, 400);
+				// }
 			}
 		})
 
 		// Toggles mobile 'about' sub links visibilty by setting container's height
 		$("#mob-about-link").click(function(){  
 			if(aboutDDContainer[0].clientHeight === 0){
-				aboutDDContainer.animate({height: "9em"}, 500);
-				mobMenuContain.animate({height: "21em"}, 500, function(){
-					opaqBackground.animate({opacity: "0.7"}, 300);
+				aboutDDContainer.animate({height: "9em"}, 400);
+				mobMenuContain.animate({height: "21em"}, 400, function(){
+					opaqBackground.animate({opacity: ".9"}, 400);
 				});
-				bigOpaqBackground.animate({opacity: "0.7", height: "21em"}, 500);
-				if(window.location.pathname != "/"){  // If not home page, adjust footer differently
-					var pixelsFromTop = footer[0].offsetTop + 144;
-					footer.css({top: "" + pixelsFromTop + "px"});
-				}else{
-					footer.animate({bottom: "-21em"}, 500);
-				}
-			}else{ 
-				aboutDDContainer.animate({height: "0em"}, 500);
-				mobMenuContain.animate({height: "12em"}, 500);
-				opaqBackground.animate({opacity: "0.0"}, 200);
-				bigOpaqBackground.animate({opacity: "0.7", height: "12em"}, 500);
 
-				if(window.location.pathname != "/"){
-					var pixelsFromTop = footer[0].offsetTop -	 144;
-					footer.css({top: "" + pixelsFromTop + "px"});
+				if(screenWidth < 481){
+					bigOpaqBackground.animate({opacity: ".9", height: "23.6em"}, 400);
 				}else{
-					footer.animate({bottom: "-12em"}, 500);
+					bigOpaqBackground.animate({opacity: ".9", height: "25em"}, 400);
 				}
+
+				// if(window.location.pathname != "/"){  // If not home page, adjust footer differently
+				// 	var pixelsFromTop = footer[0].offsetTop + 144;
+				// 	footer.css({top: "" + pixelsFromTop + "px"});
+				// }else{
+				// 	footer.animate({bottom: "-21em"}, 400);
+				// }
+			}else{ 
+				aboutDDContainer.animate({height: "0em"}, 400);
+				mobMenuContain.animate({height: "12em"}, 400);
+				opaqBackground.animate({opacity: "0.0"}, 400);
+
+				if(screenWidth < 481){
+					bigOpaqBackground.animate({opacity: ".9", height: "14.6em"}, 400);
+				}else{
+					bigOpaqBackground.animate({opacity: ".9", height: "16em"}, 400);
+				}
+				// if(window.location.pathname != "/"){
+				// 	var pixelsFromTop = footer[0].offsetTop -	 144;
+				// 	footer.css({top: "" + pixelsFromTop + "px"});
+				// }else{
+				// 	footer.animate({bottom: "-12em"}, 400);
+				// }
 			}
 		})	
 
