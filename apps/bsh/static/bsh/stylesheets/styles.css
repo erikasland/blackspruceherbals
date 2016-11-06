@@ -100,6 +100,25 @@
       padding: 2em 0 0 0;
     }
 
+  h3{
+    font-family: 'Cinzel';
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em 0 0 0;
+  }
+
+  .opaq-temp{
+    background-color: white;
+    opacity: .3;
+    height: 12em;
+    width: 18em;
+    position: absolute;
+    z-index: -1;
+    border-radius: 5px;
+    border: solid black 1px;
+  }
+
   section{
     width: 18em;
     height: 16em;
@@ -425,7 +444,7 @@
   }
 
   section{
-    width: 80%;
+    width: 24.5em;
     height: 16em;
   }
 
@@ -440,6 +459,11 @@
 
   .copyright{
     font-size: 1.5em;
+  }
+
+  .opaq-temp{
+    height: 16em;
+    width: 24.5em;
   }
 
   footer{
@@ -549,7 +573,16 @@
     width: 100%;
   }
 
-  #contact-form{
+  .opaq-temp{
+    height: 20em;
+    width: 45em;
+  }
+
+  #contact-title{
+    font-size: 3em;
+  }
+
+/*  #contact-form{
     margin: 40px auto 0 auto;
     height: 23em;
   }
@@ -569,7 +602,7 @@
   #contact-form #submit-button{
     margin-right: 20px;
   }
-
+*/
   footer{
     position: fixed;
     background-color: initial;
